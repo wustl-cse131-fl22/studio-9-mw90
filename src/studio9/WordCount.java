@@ -30,7 +30,19 @@ public class WordCount {
 	public static Map<String, Integer> countWords(List<String> words) {
 
 		// FIXME
-		throw new NotYetImplementedException();
+		HashMap<String, Integer> map = new HashMap<String, Integer>();
+
+		for (String i : words) {
+			if (!map.containsKey(i)) {
+				map.put(i,1);
+			} else {
+				int oldNum = map.get(i);
+				int newNum = oldNum +1;
+				map.replace(i, oldNum, newNum);
+			}
+		}
+		return map;
 
 	}
+	
 }
